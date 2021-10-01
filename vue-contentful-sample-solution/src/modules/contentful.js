@@ -1,9 +1,23 @@
 import { createClient } from 'contentful'
 
-let contentfulClient = createClient({
-    space: '80c03r0wfd8q',
-    accessToken: 'D_yGVdTeebDfEbT-cM-TeNGDP5zXp3e7ResHmbzbG9w'
-});
+class Contentful {
 
+    constructor() {
+        this.client= createClient({
+        space: '80c03r0wfd8q',
+        accessToken: 'D_yGVdTeebDfEbT-cM-TeNGDP5zXp3e7ResHmbzbG9w'
+    })
+    }
 
-export default contentfulClient;
+    async getCommutes() {
+        let result = await this.client
+            .getEntries({
+                content_type: "commute"
+            });
+        console.log(result.items);
+        return result.items;
+    }
+
+}
+
+export default new Contentful();
