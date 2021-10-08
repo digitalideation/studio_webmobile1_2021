@@ -1,36 +1,38 @@
 <template>
-  <div class="about">
-    <h1>My Mapbox</h1>
+  <div>
+    <h1>My Map</h1>
     <div ref="container" class="map"></div>
   </div>
 </template>
-
 <script>
+// @ is an alias to /src
+//import contentful from "@/modules/contentful.js";
 import mapboxgl from "mapbox-gl";
-import contentfulClient from "@/modules/contentful.js";
 import getCoordinatesFromGpxFile from "@/modules/gpx-utilities.js";
+import contentful from "@/modules/contentful.js";
 
 export default {
   name: "Map",
-  mounted: async function() {
 
-    // Displaying the map
+  data: function () {
+    return {
+      commutes: [],
+    };
+  },
+  mounted: async function () {
     mapboxgl.accessToken =
-      "pk.eyJ1IjoibWh1c20iLCJhIjoiY2tnY2MxdGQ1MHBrYzMxa3oyc3gxMzRiNyJ9.JPZ11U69h64ksO-S4xBZlw";
-    const map = new mapboxgl.Map({
-      container: this.$refs.container,
-      style: "mapbox://styles/mhusm/ckgcbplva0qvl19mbxd78ma97", // stylesheet location
+      "pk.eyJ1IjoibWh1c20iLCJhIjoiY2tnYzVxbHNnMDV5eTJ4bzdnb3R3NGx2bSJ9.FOXkMmSBQgCQSNCQJwxtYg";
+    let map = new mapboxgl.Map({
+      container: this.$refs.container, // container ID
+      style: "mapbox://styles/mhusm/ckgcbplva0qvl19mbxd78ma97", // My custom style
       center: [8.546385, 47.190093], // starting position [lng, lat]
-      zoom: 15 // starting zoom
+      zoom: 9, // starting zoom
     });
 
-    // Displaying a GPX track
+        // Displaying a GPX track
     map.on("load", async function() {
-      let result = await contentfulClient.getEntries({
-        content_type: "commute"
-      });
       let coordinates = await getCoordinatesFromGpxFile(
-        result.items[0].fields.gpx.fields.file.url // a link to you gpx file in Contentful
+        await contentful.getFirstGPXFileUrl()
       );
 
       map.addSource("route", {
@@ -57,13 +59,12 @@ export default {
         }
       });
     });
-  }
+  },
 };
 </script>
+<style src='mapbox-gl/dist/mapbox-gl.css'></style>
 
-
-<style scoped lang="scss">
-@import url("https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css");
+<style scoped >
 .map {
   height: 50vh;
   width: 50vw;

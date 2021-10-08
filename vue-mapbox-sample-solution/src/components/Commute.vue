@@ -1,10 +1,10 @@
 <template>
   <div class="commute">
     <h2>
-    {{ person.fields.firstname }} {{ person.fields.lastname }}'s commute
+      {{ person.fields.firstname }} {{ person.fields.lastname }}'s commute
     </h2>
     <p>
-    This is <span class="person">{{ person.fields.firstname }}</span>
+      This is <span class="person">{{ person.fields.firstname }}</span>
     </p>
     <img :src="person.fields.photo.fields.file.url" />
 
@@ -22,13 +22,13 @@ export default {
   props: {
     person: Object,
     start: Object,
-    destination: Object
-  }
+    destination: Object,
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped >
 .person {
   color: rgb(103, 189, 189);
   font-weight: bold;
