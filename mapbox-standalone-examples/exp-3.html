@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Read .gpx Track from File</title>
+    <title>Read .gpx Track from File, Contour Lines</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
     <script src="lib/d3.v3.js"></script>
     <style>
         body { margin: 0; padding: 0; }
@@ -57,20 +57,15 @@
             container: 'map', // container id
             style: 'mapbox://styles/hzuellig/ckebefin3169l19mxdbw3pxoh', // style URL
             center: [9.818001, 46.709736], // starting position [lng, lat]
-            zoom: 13 // starting zoom
+            zoom: 13, // starting zoom
+            pitch: 60,
+            bearing: 90,
         });
 
 
         map.on('load', function() {
 
-            var layers = map.getStyle().layers;
-// Find the index of the first symbol layer in the map style
-            var firstSymbolId;
-            for (var i = 0; i < layers.length; i++) {
 
-                    firstSymbolId = layers[i].id;
-                console.log(firstSymbolId)
-            }
 
             /* add Contour Layer
             https://stackoverflow.com/questions/38467973/mapbox-gl-js-contour-lines-elevation
