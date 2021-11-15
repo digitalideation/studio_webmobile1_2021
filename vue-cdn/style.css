@@ -1,0 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@300&display=swap');
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+#app{
+    width:auto;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

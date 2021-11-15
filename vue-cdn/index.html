@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Example Vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+
+
+
+        <div v-if="showRecipies">
+            Rezepte
+            <!--cycle through data-->
+                <div v-for="(item, key) in recipies" >
+                    <h1>{{item.title}}</h1>
+                    <h2>{{item.subtitle}}</h2>
+                    <img :src="'assets/'+item.src " :alt="item.title " />
+                    <p>{{item.text}}</p> <br/>
+                </div>
+
+
+        </div>
+
+
+    </div>
+
+</body>
+
+<script src="app/app.js "></script>
+
+</html>
