@@ -6,13 +6,13 @@
     <p>
       This is <span class="person">{{ person.fields.firstname }}</span>
     </p>
-    <img :src="person.fields.photo.fields.file.url" />
+    <img :src="person?.fields.photo?.fields.file.url" />
 
-    <p>{{ person.fields.firstname }} commutes from {{ start.fields.name }}</p>
+    <p>{{ person?.fields.firstname }} commutes from {{ start?.fields.name }}</p>
 
-    <img :src="start.fields.photo.fields.file.url" />
-    <p>to {{ destination.fields.name }}</p>
-    <img :src="destination.fields.photo.fields.file.url" />
+    <img :src="start?.fields.photo?.fields.file.url" />
+    <p>to {{ destination?.fields.name }}</p>
+    <img :src="destination?.fields.photo?.fields.file.url" />
   </div>
 </template>
 
