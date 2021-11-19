@@ -20,3 +20,18 @@ Term: Autumn 2021, HSLU<br/>
 
 
 # Students Projects
+Club Tour:<br/>
+GitHub: https://github.com/gina6/club_web1<br/>
+Netlify: https://web1-club.netlify.app/#/<br/><br/>
+
+Myths Group:<br/>
+GitHub: https://github.com/twistedPan/studioWebOne<br/>
+Website: https://studioweb-one.vercel.app<br/><br/>
+
+Team Krimi:<br/>
+GitHub: https://github.com/Lorrodev/WEB1_Gretello<br/>
+Website: https://gretello.netlify.app<br/><br/>
+
+Team BrumBrum<br/>
+GitHub: https://github.com/Maxframe/brumbrum-repo<br/>
+Netlify: https://brumbrum.netlify.app/<br/><br/>
