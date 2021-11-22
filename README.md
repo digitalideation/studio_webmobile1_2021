@@ -35,3 +35,11 @@ Website: https://gretello.netlify.app<br/><br/>
 Team BrumBrum<br/>
 GitHub: https://github.com/Maxframe/brumbrum-repo<br/>
 Netlify: https://brumbrum.netlify.app/<br/><br/>
+
+Team Interaktive Story<br/>
+GitHub: https://github.com/AndyGrutter/WebMobileApp<br/>
+Netlify: https://infallible-mcclintock-db874e.netlify.app/ <br/><br/>
+
+TEAM HSLU-TOUR:<br/>
+GitHub: https://github.com/ManyKaufmann/STUWE.git<br/>
+Netlify: https://hslutour.netlify.app
